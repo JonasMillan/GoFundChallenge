@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --title-color: #333333;
+  --description-color: #767676;
+  --card-background-color: #fbf8f6;
+  --font-size-base: 14px;
+  --font-size-title: 27px;
+  --desktop-width: 760px;
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 30px;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-size {
+  min-width: var(--desktop-width);
+  max-width: var(--desktop-width);
+}
+
+header {
+  margin-bottom: var(--spacing-large);
+  margin-top: 60px;
+}
+
+main {
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 60px;
+}
+
+.header-container {
+  .header-title {
+    margin: 0;
+    color: var(--title-color);
+    font-weight: bold;
+    font-size: var(--font-size-title);
+    line-height: 44px;
+  }
+
+  .header-description {
+    margin: 0;
+    color: var(--description-color);
+    font-size: var(--font-size-base);
+    line-height: 20px;
+  }
+}
+
+.card {
+  width: 350px;
+  background-color: var(--card-background-color);
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: var(--spacing-large);
+
+  .card-body {
+    display: flex;
+    .card-img {
+      margin: 0 var(--spacing-medium) var(--spacing-small) var(--spacing-small);
+    }
+    .card-info {
+      .card-title {
+        color: var(--title-color);
+        font-weight: bold;
+        font-size: var(--font-size-base);
+        line-height: 20px;
+      }
+      .card-description {
+        color: var(--description-color);
+        font-size: var(--font-size-base);
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.learn-more-button {
+  margin: 0 0 0 95px;
+  width: 40%;
+  height: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #02a95c;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .icon-button {
+    height: 25px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    margin: 0 var(--spacing-medium);
+  }
+
+  .content-size {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  header {
+    margin-bottom: var(--spacing-large);
+    margin-top: var(--spacing-large);
+  }
+
+  main {
+    display: flex;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .learn-more-button {
+    margin: 0;
+    width: 100%;
+    height: 50px;
+  }
+}
